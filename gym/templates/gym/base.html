@@ -1,0 +1,36 @@
+{% include 'gym/navigationbar.html'%}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+   
+ <link rel="stylesheet" href="{% static 'gym/css/style.css'%}">
+
+ {% block styles%}
+{%endblock%}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {%block title%}
+    <title>HOME</title>
+    
+{%endblock%}
+   
+    
+</head>
+
+<body>
+
+    {% block body%}
+
+    {% endblock %}
+    
+    <footer class="footer background">
+    
+         <p> your health our priority!!</p>
+    </footer>
+    {% block scripts%}
+    <script src="{% static 'gym/js/resp.js'%}"></script>
+    {%endblock%}
+</body>
+</html>

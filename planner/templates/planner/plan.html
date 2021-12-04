@@ -1,0 +1,26 @@
+{% extends 'planner/main.html'%}
+{% load static%}
+{% block content%}
+<link rel="stylesheet" href="{% static 'planner/main.css'%}">
+<div class="header-bar">
+ <a class="button"href="{% url 'plans_list'%}"> back</a>
+ </div>
+   <ul>
+    <h3>Workout</h3> 
+    <li>{{plans.workout}}</li>
+    <br><br>
+    <h3>Description</h3>
+    <li>{{plans.description}}</li>
+    <br><br>
+    <h3>Days</h3>
+    <li>{{plans.days}}</li>
+    <br><br>
+    <br><br>
+    <h3>Time</h3>
+    <li>{{plans.time}}</li>
+    <br><br>
+    </ul>
+    <a class="button"href="/book/"> book this class</a>
+   
+    
+{%endblock%}

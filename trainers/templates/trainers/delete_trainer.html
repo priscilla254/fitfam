@@ -1,0 +1,26 @@
+{% extends 'gym/base.html'%}
+{% load static %}
+
+{%block body%}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<br>
+<div class="row">
+    <div class="col-md-6">
+        <div class="card card-body">
+            <p> are you sure you want to delete "{{trainer.name}}"</p>
+
+            <form method="POST">
+                {%csrf_token%}
+                <a href="/delete_trainer/"></a>
+                <input class ="btn btn-danger" type= "submit" value="delete">
+                <a class="btn btn-warning" href="/trainers_list/"> cancel</a>
+
+    
+            </form>
+        </div>
+    </div>
+</div>
+
+{%endblock%}
+

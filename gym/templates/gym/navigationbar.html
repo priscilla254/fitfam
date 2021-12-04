@@ -1,0 +1,60 @@
+{%load static%}
+
+{% block head %}
+<link rel ="stylesheet" href="{% static 'gym/css/navbar.css'%}">
+<style>
+.hello{
+ font-size:18px;
+ color:fff;
+ margin-right:20px;
+}
+</style>
+{% endblock %}
+
+<nav class="navbar background h-nav-resp">
+        <ul class="nav-list v-class-resp">
+            {% comment%}
+              <div class="logo">
+                  <img src="{% static 'gym/images/logo.png'%}" alt="logo">
+              </div>
+              {%endcomment%}
+              <div class="dropdown">
+                  <button class="dropbtn"><strong>MENU</strong></button>
+                  <div class="dropdown-content">
+             <li><a href="/">HOME</a></li>
+            
+             <li><a href="{% url 'services'%}">SERVICES</a></li>
+             <li><a href="{% url 'contact'%}">CONTACT_US</a></li>
+             <li><a href="{%url 'register'%}">SIGNUP</a></li>
+             <li><a href="{% url 'subscriptions'%}">SUBSCRIPTIONS</a></li>
+             <li><a href="{% url 'plans_list'%}">BOOK A SESSION </a></li>
+           
+             
+             <li><a href= "{% url 'dashboard'%}"> DASHBOARD</a></li>
+             
+            </div>
+            </div>
+        </ul>
+         <div class="right-nav v-class-resp">
+        <br>
+             <ul>
+             {% if user.is_authenticated %}
+                  <li><span class = "hello" > Hello,{{request.user}}</span></li>
+                  <li><span><strong> <a class="hello" href="{%url 'logout'%}"> LogOut </a></strong> </span></li>
+
+            {% else %}
+                <li><a href="{%url 'login'%}">LOGIN</a></li>
+            
+            </ul>
+            {%endif%}
+         </div>
+         <div class="burger">
+             <div class="line"></div>
+             <div class="line"></div>
+             <div class="line"></div>
+         </div>
+     
+</nav>
+
+
+

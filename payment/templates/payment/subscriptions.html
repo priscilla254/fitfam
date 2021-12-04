@@ -1,0 +1,95 @@
+{% include 'gym/base.html'%}
+{% load static %}
+{% block styles%}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="{% static 'gym/css/plans.css'%}">
+  {%endblock%}
+{% block body%}
+
+<body class="pricing sidebar-collapse">
+  <div class="main main-raised">
+      <div class="container-fluid">
+        <div class="pricing-2">
+          <div class="row">
+            <div class="col-md-6 ml-auto mr-auto text-center">
+              <ul class="nav nav-pills nav-pills-rose">
+                <li class="nav-item">
+                  <a class="nav-link " href="https://buy.stripe.com/test_6oEbMgee80Ja1YkfYY" data-toggle="tab">weekly</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active show" href="https://buy.stripe.com/test_4gwg2w9XSgI8byU3cd" data-toggle="tab">Monthly</a>
+                </li>
+                <span>
+                <li class="nav-item">
+                  <a class="nav-link " href="https://buy.stripe.com/test_00g6rW2vq3VmbyU5km" data-toggle="tab">Yearly</a>
+                </li>
+                </span>
+              </ul>
+            </div>
+          </div>
+          <div class="row">
+
+            <div class="col-sm-4">
+              <div class="card card-pricing card-plain">
+                <div class="card-body">
+                  <h3 class="card-category text-info">weekly</h3>
+                  <h1 class="card-title"><small>ksh</small>1000<small>/wk</small></h1>
+                  <ul>
+                  <li> personal training</li>
+                    <li>classes</li>
+                    <li> unlimited gym time</li>  
+                  </ul>
+                  <a href="https://buy.stripe.com/test_6oEbMgee80Ja1YkfYY" class="btn btn-rose btn-raised btn-round">
+                    Make payment
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="card card-pricing card-raised bg-rose">
+                <div class="card-body">
+                   <h3 class="card-category text-info">Monthly</h3>
+                  <h1 class="card-title"><small>ksh</small>3000<small>/mo</small></h1>
+                  <ul>
+                    <li> personal training</li>
+                    <li>classes</li>
+                    <li> unlimited gym time</li>
+                    
+                  </ul>
+                  <a href="https://buy.stripe.com/test_4gwg2w9XSgI8byU3cd" class="btn btn-white btn-raised btn-round">
+                    Make payment
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+              <div class="card card-pricing card-plain">
+                <div class="card-body">
+                   <h3 class="card-category text-info">Yearly</h3>
+                  <h1 class="card-title"><small>ksh</small>32000<small>/yr</small></h1>
+                  <ul>
+                   <li> personal training</li>
+                    <li>classes</li>
+                    <li> unlimited gym time</li>
+                  </ul>
+                  <a href="https://buy.stripe.com/test_00g6rW2vq3VmbyU5km" class="btn btn-rose btn-raised btn-round">
+                    Make Payment
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <hr>
+       
+  
+</body>
+{%endblock%}
+ {% block scripts%}
+    <script src="{% static 'gym/js/plans.js'%}"></script>
+  
+ 
+  {%endblock%}

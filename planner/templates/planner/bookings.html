@@ -1,0 +1,61 @@
+{% extends 'gym/base.html'%}
+{% block title%}
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<title>bookings|page</title>
+{%endblock%}
+
+
+{% block body%}
+<h2> Bookings of the week</h2>
+<div class="row">
+    <div class="col">
+        <div class="card card-body">
+            <form method="get">
+                {{myFilter.form}}
+                <button class="btn btn-primary" type="submit"> Search</button>
+            </form>
+        </div>
+    </div>
+</div> 
+    
+            <table class="table table-bordered table-dark" >
+                <thead>
+                <tr>
+                    <th scope="col"> Day</th>
+                    <th scope="col"> Name</th>
+                    <th scope="col"> Workout</th>
+                    <th scope="col"> Time</th>
+                    
+                    
+                   
+                    
+                </tr>
+                </thead>
+                <tbody>
+                {% for fields in bookings %}
+                <tr>
+                  
+        
+                    <td>{{fields.day}}</td>
+                    <td>{{fields.name}}</td>
+                    <td>{{fields.workout}}</td>
+                     <td>{{fields.time}}</td>
+                    
+                  
+                </tr>
+                
+                {%endfor%}
+                
+
+
+                </tbody>
+            </table>
+            <div>
+                
+                
+            </div>
+        </div>
+        
+{% endblock%}       
+          

@@ -1,0 +1,92 @@
+{% load static %}
+{% include 'gym/navigationbar.html'%}
+{%block head%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOME</title>
+    
+    <link rel="stylesheet" href="{% static 'gym/css/style.css'%}">
+    
+</head>
+{% endblock%}
+<body>
+ <section id="about" class="section">
+         <div class="paras">
+         <p class="sectiontag">aerobics </p>
+         <p class="sectionSubTag">
+         aerobics is a form of physical exercise that combines rhythmic aerobic exercise with stretching and 
+         strength training routines with the goal of improving all elements of fitness be it flexibility,muscular strength
+         and cardiovascular fitness. it is performed with music and in a group setting.
+         there are various types of aerobics such as taebo and step aerobics.
+         </p>
+            </div>
+             <div class="thumbnail">
+                 <img src="{% static 'gym/images/aerobics.jpg'%}" alt="photo"/>
+             </div>
+     </section>
+
+     <section class="section leftsection">
+        <div class="paras">
+        <p class="sectiontag">circuit class </p>
+        <p class="sectionSubTag">  circuit class commonly referred to circuit training is a fast-paced class in which you exercise for predefined period say 40 seconds and then move
+        to another exercise.it's like a game of musical chairs. everyone begins at a station and when the time is up , the bell rings and everyone moves to 
+        the next station. they may focus on muscle-strengthening activityor just muscle toning or aerobic exercise.  </p>
+           </div>
+            <div class="thumbnail">
+                <img src="{% static 'gym/images/circuit-class.jpg'%}" alt="photo">
+            </div>
+    </section>
+
+    <section class="section">
+        <div class="paras">
+        <p class="sectiontag"> group training </p>
+        <p class="sectionSubTag">group training involves fewer than 10 participants led by a professional trainer 
+        or instructor. it normally involves strength training,core or even cardio. </p>
+           </div>
+            <div class="thumbnail">
+                <img src="{%static 'gym/images/group-class.jpg'%}" alt="photo">
+            </div>
+    </section>
+    <section class="section leftsection">
+        <div class="paras">
+        <p class="sectiontag">personal training </p>
+        <p class="sectionSubTag">  this is individual training for those who prefer to train on their own or with the help of one of our trainers  </p>
+           </div>
+            <div class="thumbnail">
+                <img src="{% static 'gym/images/gym-babe.jpg'%}" alt="photo">
+            </div>
+    </section>
+    <section class="section">
+        <div class="paras">
+        <p class="sectiontag"> Mobile FitFam </p>
+        <p class="sectionSubTag">
+         mobile fitfam is a service that server those people who for whatever reoson cannot come to the gym.once 
+         you book a session with us, one of our trainers will contact you to organize on the kind of workout you want fpr that particular
+         session, he will then prepare a workout routine and come to your locaton with all the mobile equipments you will need for that particular workout   
+        </p>
+           </div>
+            <div class="thumbnail">
+                <img src="{%static 'gym/images/mobile_fitfam.jpg'%}" alt="photo">
+            </div>
+            
+    </section>
+    
+
+    <section id="contact" class="contact">
+        <div class="aa">
+        <h2>Reach Us :-</h2>
+        <h2>ADDRESS: Juja main gate</h2>
+        <h2>CONTACT NO: 0723567890</h2>
+        <h2>EMAIL ID:  FitFamgym@gmail.com</h2>
+        </div>
+    </section>
+
+    <footer class="footer background">
+         <p> your health our priority!!</p>
+    </footer>
+    <script src="{% static 'gym/js/resp.js'%}"></script>
+</body>
+</html>

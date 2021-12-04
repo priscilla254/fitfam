@@ -1,0 +1,85 @@
+{% extends 'gym/base.html' %} 
+
+
+{% load static %}
+{% block styles%}
+<script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+<link rel="stylesheet" href="{% static 'planner/main.css'%}">
+
+    <title>workout plan</title>
+    
+{% endblock %}
+{%block body%}
+<div class="header-bar">
+    
+   
+</div>
+   
+            {% if request.user.is_authenticated%}
+            
+            {% else%}
+            <a href="{url 'login'%}"></a>
+            {%endif%}
+           
+        </div>
+</div>
+<h2><strong> weekly fitfam gym schedule</strong></h2>
+<div class="search-add-wrapper">
+    {% if request.user.is_staff %}
+  <a id="add-link"href="/plans_form/"> &#x2b;</a>
+    {% endif%}
+</div>
+<div class="task-items-wrapper">
+   
+    {% for plans in plans %}  
+        <div class="task-wrapper">
+            {% if plans.complete%}
+              <div class="task-title">
+                <div class="task-complete-icon"></div>
+                <i><s><a href="{% url 'plan' plans.id%}">{{plans}}</a></s></i>
+                </div>
+
+            <div class="task-wrapper">
+                    
+             
+                
+                {% if request.user.is_staff %}
+               
+                <a href="{% url 'plans-update' plans.id%}">update</a>  
+                <a href="{% url 'plans-delete' plans.id%}"> delete </a>
+            
+                {% endif%}
+            </div> 
+            {% else %}
+            <div class="task-title">
+                <div class="task-incomplete-icon"></div>
+                <i><a href="{% url 'plan' plans.id%}">{{plans}}</a></i>
+                 
+            </div>
+            {% if request.user.is_staff %}
+            <a href="{% url 'plans-update' plans.id%}">update</a>
+             <a  href="{% url 'plans-delete' plans.id%}"> delete </a>
+            {%endif%}
+             {% endif%}
+             <br><br>
+        </div>
+        
+     {%empty%}
+    <h3> no plans scheduled</h3>
+    {%endfor%}
+    <br><br>
+    <div class="header-bar">
+            
+        <p class="task-wrapper"><strong> For personal training and solo training at the gym, book your preferred time</p></strong>
+                <i><a href="{% url 'book'%}">book session</a></i>
+            
+     </div>  
+     <div class="header-bar">
+            
+        <p class="task-wrapper"><strong> For a session with mobile fitfam package:</p></strong>
+                <i><a href="{% url 'remote_bookings'%}">book mobile fitfam</a></i>
+            
+     </div>  
+</div>
+     
+{% endblock%}

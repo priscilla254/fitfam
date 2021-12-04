@@ -1,0 +1,57 @@
+
+{% extends 'gym/base.html'%}
+
+{% load static %}
+{% block title%}
+ <link rel="stylesheet"href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet"href="{% static 'planner/style.css'%}">
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+<title> book session</title>
+{%endblock%}
+
+{% block body%}
+
+<div class="testbox">
+    <form method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <div class="banner">
+        <h1>book gym session</h1>
+      </div>
+      
+      <div class="item">
+        <p>Day</p>
+        <div class="name-item">
+          {{form.day}}
+        
+        </div>
+      </div>
+      <div class="item">
+        <p>Name</p>
+        <div class="name-item">
+          {{form.name}}
+          
+        </div>
+      </div>
+    <div class="item">
+      <p>Workout </p>
+      <div class="name-item">
+       {{form.workout}}
+      </div>
+    </div>
+      
+      
+      <div class="item">
+        <p>Time </p>
+       {{form.time}}
+        
+      </div>
+      
+      <div class="btn-block">
+        <button a href="{% url 'book_confirm'%}"> confirm session</button>
+      </div>
+    </form>
+  </div>
+
+
+  {% endblock%}
