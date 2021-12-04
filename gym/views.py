@@ -14,7 +14,7 @@ from django.contrib.auth.models import Group
 from .forms import MemberForm,CreateUserForm,ProfileForm
 from django.contrib.auth.forms import UserCreationForm
 from .decorators import unauthenticated_user,allowed_users
-
+import os
 def index(request):
     return render(request,'gym/index.html')
 
@@ -82,7 +82,7 @@ def ContactView(request):
             name, # subject
             subject, #message
             email,#from email
-            ['baiyawambui8@gmail.com'],
+            [os.environ.get('EMAIL_HOST_USER')],
         )
         return render(request,'gym/contact.html',{'name':name})
     return render(request,'gym/contact.html')

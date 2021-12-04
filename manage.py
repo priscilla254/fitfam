@@ -2,9 +2,16 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
-
+import dotenv
+import pathlib
 
 def main():
+    DOT_ENV_PATH=pathlib.Path()/ '.env'
+    if DOT_ENV_PATH.exists():
+        dotenv.read_dotenv()
+
+
+    
     """Run administrative tasks."""
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'fitfam.settings')
     try:

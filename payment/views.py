@@ -8,7 +8,8 @@ from django.urls import reverse
 import json
 from django.http import JsonResponse
 import stripe
-stripe.api_key = "sk_test_51JS3epDrHJkkmqbMpbS71QQdIs8Yd1VHFvEAFtWaKwjNHsNhcKmhEdwkl1pHZnMxhswfCvG3piMycd85dEdeK7l8001XGv9Yin"
+import os
+stripe.api_key = os.environ.get("STRIPE_SECRET_KEY")
 
 #stripe 
 def charge(request):
@@ -50,24 +51,9 @@ def Plan_view(request):
 def paymentview(request):
    return render(request,'payment/paymentredirect.html')
 
-def success(request,pk):
-    template=render_to_string('payment/email_template.html',{'name':request.user.username})
-    email=EmailMessage(
-        'Thankyou for renewing your subscription',
-        template,
-        settings.EMAIL_HOST_USER,
-        ['priscillawambui8@gmail.com']
-        #['request.user.email'],
-    )
-    email.fail_silently=False
-    email.send()
-    
-    paid=MemberPayment.objects.all(id=pk)
-    context={
-        'paid':paid
-    }
-    return render(request,'payment/paymentredirect.html',context)
 
+    
+   
 
 def MemberPaymentView(request):
     object=MemberPayment.objects.all()
